@@ -15,7 +15,7 @@ char	*get_next_line(int fd);
 char	*copy_new_line(char *line);
 char	*ft_read_line(int fd, char *reading_line);
 char	*go_to_next_line(char *line);
-size_t	ft_strlen(const char *str);
+size_t 	ft_strlen(const char *str);
 char	*ft_strjoin(const char *s1, const char *s2);
 char	*pre_ft_strjoin(char *line, char *temp_buffer);
 char	*ft_strchr(const char *s, int c);

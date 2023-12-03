@@ -29,14 +29,15 @@ int	main(int argc, char **argv)
 		linenmbr = 100;
 	}
 	i = 0;
-	arr = malloc(sizeof(char *) * linenmbr);
+	arr = malloc(sizeof(char *) * (linenmbr + 1));
 	while (i < linenmbr)
 	{
 		arr[i] = get_next_line(file);
-		if (arr[i] == NULL)
-			return (0);
+		if (!arr[i])
+			return (1);
 		i++;
 	}
+	arr[i] = NULL;
 	if (argv[1][0] == '1' && argv[1][1] == '\0')
 		result = ft_1(arr);
 	else if (argv[1][0] == '2' && argv[1][1] == '\0')
