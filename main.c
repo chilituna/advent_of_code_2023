@@ -28,6 +28,18 @@ int	main(int argc, char **argv)
 			return (1);
 		linenmbr = 100;
 	}
+	else if (argv[1][0] == '4' && argv[1][1] == '\0')
+	{
+		file = open("4.txt", O_RDONLY);
+			if (file == -1)
+			return (1);
+		linenmbr = 218;
+	}
+	else
+	{
+		printf("Error: Wrong argument\n");
+		return (1);
+	}
 	i = 0;
 	arr = malloc(sizeof(char *) * (linenmbr + 1));
 	while (i < linenmbr)
@@ -42,6 +54,13 @@ int	main(int argc, char **argv)
 		result = ft_1(arr);
 	else if (argv[1][0] == '2' && argv[1][1] == '\0')
 		result = ft_2(arr);
+	else if (argv[1][0] == '4' && argv[1][1] == '\0')
+		result = ft_4(arr);
+	else
+	{
+		printf("not available");
+		return(0);
+	}
 	ft_freeall(arr);
 	close(file);
 	printf("Result= %d\n", result);

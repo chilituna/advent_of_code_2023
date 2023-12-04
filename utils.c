@@ -32,3 +32,16 @@ void    ft_freeall(char **arr)
     }
     free(arr);
 }
+
+void    ft_free_int(int **arr)
+{
+    int	i;
+
+    i = 0;
+    while (arr[i])
+    {
+        free(arr[i]);
+        i++;
+    }
+    free(arr);
+}
